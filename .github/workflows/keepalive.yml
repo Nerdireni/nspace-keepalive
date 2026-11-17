@@ -14,7 +14,9 @@ jobs:
             "https://pcxgmlptoninadehpbud.supabase.co/auth/v1/health" \
             "https://rojatrsblzrcsarwhhlq.supabase.co/auth/v1/health" \
             "https://ddhyfpoeznxsbfykobsh.supabase.co/auth/v1/health" \
-            "https://pybhnhcdqajymsrskaae.supabase.co/auth/v1/health"; do
+            "https://pybhnhcdqajymsrskaae.supabase.co/auth/v1/health" \
+            "https://zlgdldnroxluwxrmulbp.supabase.co/auth/v1/health" \
+            "https://aqecdmchqemvtjuvunms.supabase.co/auth/v1/health"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$url" || echo "000")
             echo "$url -> $code"
           done
@@ -27,7 +29,9 @@ jobs:
             "https://amtacitizens.com" \
             "https://nspacemail.nairaspace.com" \
             "https://kruzcollection.com" \
-            "https://emmaneagleeye.com"; do
+            "https://emmaneagleeye.com" \
+            "https://interrandproperties.com" \
+            "https://orvintoo.com"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 -L "$url" || echo "000")
             echo "$url -> $code"
           done
