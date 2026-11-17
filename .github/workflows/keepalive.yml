@@ -11,18 +11,23 @@ jobs:
         run: |
           for url in \
             "https://gieiiofpdgdrsctsrfam.supabase.co/auth/v1/health" \
+            "https://pcxgmlptoninadehpbud.supabase.co/auth/v1/health" \
+            "https://rojatrsblzrcsarwhhlq.supabase.co/auth/v1/health" \
             "https://ddhyfpoeznxsbfykobsh.supabase.co/auth/v1/health" \
             "https://pybhnhcdqajymsrskaae.supabase.co/auth/v1/health"; do
             echo "Pinging $url"
             curl -s -o /dev/null -w "%{http_code}\n" --max-time 30 "$url"
           done
-      - name: Ping live sites
+      - name: Ping live platforms
         run: |
           for url in \
             "https://www.nairaspace.com" \
+            "https://nairaspace-creator-hub.lovable.app" \
+            "https://nspaceplus.nairaspace.com" \
             "https://amtacitizens.com" \
             "https://nspacemail.nairaspace.com" \
-            "https://kruzcollection.com"; do
+            "https://kruzcollection.com" \
+            "https://emmaneagleeye.com"; do
             echo "Pinging $url"
             curl -s -o /dev/null -w "%{http_code}\n" --max-time 30 -L "$url"
           done
