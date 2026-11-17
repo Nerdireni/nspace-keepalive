@@ -15,8 +15,8 @@ jobs:
             "https://rojatrsblzrcsarwhhlq.supabase.co/auth/v1/health" \
             "https://ddhyfpoeznxsbfykobsh.supabase.co/auth/v1/health" \
             "https://pybhnhcdqajymsrskaae.supabase.co/auth/v1/health"; do
-            echo "Pinging $url"
-            curl -s -o /dev/null -w "%{http_code}\n" --max-time 30 "$url"
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$url" || echo "000")
+            echo "$url -> $code"
           done
       - name: Ping live platforms
         run: |
@@ -28,6 +28,6 @@ jobs:
             "https://nspacemail.nairaspace.com" \
             "https://kruzcollection.com" \
             "https://emmaneagleeye.com"; do
-            echo "Pinging $url"
-            curl -s -o /dev/null -w "%{http_code}\n" --max-time 30 -L "$url"
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 -L "$url" || echo "000")
+            echo "$url -> $code"
           done
